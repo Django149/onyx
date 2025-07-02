@@ -17,12 +17,14 @@ interface MinimalMarkdownProps {
   content: string;
   className?: string;
   style?: CSSProperties;
+  direction?: "auto" | "ltr" | "rtl";
 }
 
 export default function MinimalMarkdown({
   content,
   className = "",
   style,
+  direction = "auto",
 }: MinimalMarkdownProps) {
   const markdownComponents = useMemo(
     () => ({
@@ -41,7 +43,7 @@ export default function MinimalMarkdown({
   );
 
   return (
-    <div style={style || {}} className={`${className}`}>
+    <div style={style || {}} className={`${className}`} dir={direction}>
       <ReactMarkdown
         className="prose dark:prose-invert max-w-full text-sm break-words"
         components={markdownComponents}
