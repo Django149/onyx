@@ -196,6 +196,13 @@ export interface OCICredentialJson {
   access_key_id: string;
   secret_access_key: string;
 }
+
+export interface NetworkFileSystemCredentialJson {
+  smb_username: string;
+  smb_password: string;
+  smb_domain?: string;
+}
+
 export interface SalesforceCredentialJson {
   sf_username: string;
   sf_password: string;
@@ -423,6 +430,11 @@ export const credentialTemplates: Record<ValidSources, any> = {
     access_key_id: "",
     secret_access_key: "",
   } as GCSCredentialJson,
+  network_file_system: {
+    smb_username: "",
+    smb_password: "",
+    smb_domain: null,
+  } as NetworkFileSystemCredentialJson,
   oci_storage: {
     namespace: "",
     region: "",
@@ -636,6 +648,11 @@ export const credentialDisplayNames: Record<string, string> = {
   // Bitbucket
   bitbucket_email: "Bitbucket Account Email",
   bitbucket_api_token: "Bitbucket API Token",
+
+  // Network File System
+  smb_username: "SMB Username",
+  smb_password: "SMB Password",
+  smb_domain: "SMB Domain (Optional)",
 };
 
 export function getDisplayNameForCredentialKey(key: string): string {

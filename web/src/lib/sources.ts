@@ -196,6 +196,12 @@ export const SOURCE_METADATA_MAP: SourceMap = {
     category: SourceCategory.Storage,
     docs: "https://docs.onyx.app/admin/connectors/official/s3",
   },
+  network_file_system: {
+    icon: FileIcon2,
+    displayName: "Network File System",
+    category: SourceCategory.Storage,
+    docs: "https://docs.onyx.app/admin/connectors/official/network_file_system",
+  },
   google_cloud_storage: {
     icon: GoogleStorageIcon,
     displayName: "Google Storage",

@@ -164,6 +164,10 @@ CONNECTOR_CLASS_MAP = {
         module_path="onyx.connectors.blob.connector",
         class_name="BlobStorageConnector",
     ),
+    DocumentSource.NETWORK_FILE_SYSTEM: ConnectorMapping(
+        module_path="onyx.connectors.network_file_system.connector",
+        class_name="NetworkFileSystemConnector",
+    ),
     DocumentSource.XENFORO: ConnectorMapping(
         module_path="onyx.connectors.xenforo.connector",
         class_name="XenforoConnector",

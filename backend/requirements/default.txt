@@ -70,6 +70,7 @@ pytest-playwright==0.7.0
 python-docx==1.1.2
 python-dotenv==1.1.1
 python-multipart==0.0.20
+pysmb==1.2.9
 pywikibot==9.0.0
 redis==5.0.8
 requests==2.32.5

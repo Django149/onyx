@@ -489,6 +489,7 @@ export enum ValidSources {
   Asana = "asana",
   S3 = "s3",
   R2 = "r2",
+  NetworkFileSystem = "network_file_system",
   GoogleCloudStorage = "google_cloud_storage",
   Xenforo = "xenforo",
   OciStorage = "oci_storage",

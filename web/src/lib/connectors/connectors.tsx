@@ -1185,6 +1185,62 @@ For example, specifying .*-support.* as a "channel" will cause the connector to 
     advanced_values: [],
     overrideDefaultFreq: 60 * 60 * 24,
   },
+  network_file_system: {
+    description: "Configure Network File System connector",
+    values: [
+      {
+        type: "text",
+        label: "UNC Path",
+        name: "share_path",
+        query:
+          "Enter the UNC path to start indexing from (e.g. \\\\fileserver\\share\\folder):",
+        optional: false,
+      },
+    ],
+    advanced_values: [
+      {
+        type: "number",
+        label: "Port",
+        name: "port",
+        optional: true,
+        description: "Defaults to 445 if not specified.",
+      },
+      {
+        type: "number",
+        label: "Maximum Depth",
+        name: "max_depth",
+        optional: true,
+        description:
+          "Limit how many nested folders to traverse relative to the UNC path.",
+      },
+      {
+        type: "number",
+        label: "Size Threshold (MB)",
+        name: "size_threshold_mb",
+        optional: true,
+        description:
+          "Skip files larger than this size. Leave empty to use the system default.",
+      },
+      {
+        type: "checkbox",
+        label: "Ignore Hidden Entries",
+        name: "ignore_hidden_entries",
+        optional: true,
+        default: true,
+        description:
+          "If enabled, files and folders starting with '.' are skipped.",
+      },
+      {
+        type: "list",
+        label: "Exclude Patterns",
+        name: "exclude_patterns",
+        optional: true,
+        description:
+          "Glob patterns (relative to the UNC path) to skip, e.g. **/tmp/** or **/*.log.",
+      },
+    ],
+    overrideDefaultFreq: 60 * 60 * 24,
+  },
   r2: {
     description: "Configure R2 connector",
     values: [
